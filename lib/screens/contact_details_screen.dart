@@ -26,19 +26,48 @@ class _ContactDetailsScreenState extends State<ContactDetailsScreen> {
       ),
       body: Center(
         child: Container(
-          child: ListTile(
-            onTap: () {
-              print('tapped');
-            },
-            leading: CircleAvatar(
-              backgroundColor: Colors.teal,
-              radius: 20,
-              backgroundImage: NetworkImage(selectedContact.country),
-            ),
-            title: Text(selectedContact.name,
-                style: Theme.of(context).textTheme.bodyText1),
-            subtitle: Text(selectedContact.number,
-                style: Theme.of(context).textTheme.subtitle1),
+          padding: EdgeInsets.all(20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Name"),
+                        Text(selectedContact.name,
+                            style: Theme.of(context).textTheme.bodyText1),
+                      ]),
+                ),
+              ),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Phone"),
+                        Text(selectedContact.number,
+                            style: Theme.of(context).textTheme.subtitle1),
+                      ]),
+                ),
+              ),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("country"),
+                        Text(selectedContact.country,
+                            style: Theme.of(context).textTheme.subtitle1),
+                      ]),
+                ),
+              ),
+            ],
           ),
         ),
       ),
