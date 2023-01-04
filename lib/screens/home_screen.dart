@@ -96,11 +96,7 @@ Widget buildList(BuildContext context, Box contactsBox) {
                 databaseProvider.updateSelectedIndex(index);
                 databaseProvider.deleteFromHive();
               },
-              leading: CircleAvatar(
-                backgroundColor: Colors.teal,
-                radius: 20,
-                backgroundImage: NetworkImage(contact.country),
-              ),
+              trailing: Text(contact.country),
               title: Text(contact.name,
                   style: Theme.of(context).textTheme.bodyText1),
               subtitle: Text(contact.number,
