@@ -13,6 +13,7 @@ class SearchWidget extends SearchDelegate<Contacts> {
         icon: const Icon(Icons.clear),
         onPressed: () {
           query = '';
+          Navigator.pop(context);
         },
       ),
     ];
